@@ -6,7 +6,7 @@ import { usePath, useRoutes } from "raviger";
 import routes from "./Routes";
 import ApolloClientProvider from "./providers/ApolloClientProvider";
 import AppBridgeProvider from "./providers/AppBridgeProvider";
-import {RecoilRoot} from 'recoil'
+
 const appBridgeConfig = {
   apiKey: process.env.SHOPIFY_API_KEY,
   host: new URL(location).searchParams.get("host"),
@@ -14,7 +14,7 @@ const appBridgeConfig = {
 };
 
 export default function App() {
-  const currentPath = usePath();
+  const currentPath = usePath(); 
   const RouteComponents = useRoutes(routes);
 
   return (
@@ -23,7 +23,7 @@ export default function App() {
       i18n={translations}
       features={{ polarisSummerEditions2023: true }}
     >
-      <AppBridgeProvider>
+      <AppBridgeProvider appBridgeConfig>
         {/* <NavigationMenu
           navigationLinks={[
             {
