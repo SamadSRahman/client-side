@@ -9,3 +9,4 @@ root.render(
 <App />
 </RecoilRoot>
 );
+console.log("Index")
